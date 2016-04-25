@@ -1,0 +1,36 @@
+Eli Sobylak
+28-nov-15
+
+Ch3: P28, P29, P43, P46, P50,
+
+P28:
+There will be congestion control active on the receiving end of the line. This will give you a graph of the TCP segmentation similar to the one we saw in our TCP lab, where the tail end of the data is taking longer to be accepted than it was sent.
+
+P29:
+a.
+It uses a special initial sequence number because if it were predictable you could pick up someones internet cookie session and do malicious things.
+
+b.
+Not necessarily, they’d have to know the sequence number which unless you’r looking right at the persons internet traffic it’d be pretty hard to guess the sequence number for a given internet session.
+
+c.
+Not sure, but if they had a large amount of initial sequence numbers you might be able to get one or two open connections if you happen to be that lucky.
+
+P43:
+The determining factor here would be the rate of the link connecting Host A to the internet which is denoted in this problem by R, in the units of bps.
+
+P46:
+a.
+The maximum window size in this TCP connection would be 150
+
+b.
+The average window size is segments would be 150 and the average throughput would be 15bps
+
+P50:
+a.
+C1 will have a congestion window of 5 and C2 will have a size of 10.
+
+b.
+Over time, they will probably end up with the same share of the bandwidth of the congestion link.
+
+

@@ -1,0 +1,115 @@
+Chapter 8:
+
+8.4:
+control bit
+page number - is the index into the page table pg. 346
+process id
+valid bit - pg 380
+chain pointer - in inverted page table you can get collisions, and so this is a way to handle it and keep track of where you are placing things.
+
+8.5:
+TLB - is like caching for paging and page tables
+
+8.6:
+pre-paging
+demand paging - minimize page faults over time 
+
+8.7:
+resident set - where stuff is happening 
+replacement policy - determines which specific page needs to be replaced 
+
+8.8:
+
+8.9:
+keeps things close by, so you don’t have to do a full swap
+
+8.10:
+
+8.11:
+resident set- everything that is currently in memory
+working set- set of pages process actually uses
+
+8.12:
+demand cleaning - 
+pre cleaning -
+
+Chapter 9
+
+9.1:
+long - what should be added
+medium - partially in memory 
+short - which process in ready is going to be run
+
+9.2:
+response time 
+
+9.3:
+turnaround time - total time process spends in system
+
+9.4:
+closer to zero is higher priority 
+
+9.5:
+
+
+9.6:
+FCFS 
+favors long processes 
+
+9.7:
+Round robin
+fair
+I/O bound takes up more time
+lots of switching overhead
+
+9.8:
+shortest process next
+short process are favored 
+
+9.9:
+shortest remaining time
+preemptive 
+lots of overhead 
+
+9.10:
+highest response ratio next
+uses process history to determine response ratio = (wait time - service time/ service time)
+doesn’t preempt 
+
+9.11:
+feedback scheduling 
+uses time spent in execution 
+time quantum based
+
+Chapter 10
+
+10.1:
+pg 432
+
+10.2:
+pg 437
+thread scheduling
+load sharing
+gang scheduling 
+dedicated processor assignment 
+dynamic scheduling 
+
+10.3:
+10.4:
+10.5:
+
+
+10.6:
+pg 443
+determinism
+responsiveness
+user control
+reliability 
+fail-soft operation
+
+10.7:
+pg 447
+
+10.8:
+pg 448
+

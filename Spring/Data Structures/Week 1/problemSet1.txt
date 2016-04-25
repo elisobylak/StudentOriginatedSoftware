@@ -1,0 +1,8 @@
+Eli Sobylak
+30-Mar-16
+
+Problem Set 1
+
+1) Sorting algorithms have been and look like they will continue to be in a constant state of improvement and specialization. There are a lot of sorting algorithms and they are used for different things. And that’s the thing, certain sorting algorithms are god at sorting certain sets of data. For example, Buffer Trees are a solution to many problems surrounding computational geometry. One could use a B-tree to store the coordinates and since the binary nature of the B-tree results in a height Log N and a I/O bound of O(N log N). On the other hand you’d be better off using a Buffer Tree because it is a balanced multiway tree with a buffer that can store a set number of items. This gives the Buffer tree a query I/O bound of O((1/B)log n) where B is the order of the B-tree.
+
+2) A suffix tree is a compressed trie that contains the suffixes of a given string as their keys and positions in the string as their values. This allows for quick string operations. These speedups come at a cost though. Storing a string’s suffix tree normally requires significantly more space than storing the string itself.

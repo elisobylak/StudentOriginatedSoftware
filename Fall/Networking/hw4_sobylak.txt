@@ -1,0 +1,27 @@
+Eli Sobylak
+25-oct-15
+
+Ch3: R3, R4, R5, R7-8,P3, P5-6
+
+R3: If Host A has the source port x and Host B has the destination port y. Therefore, on the trip back, Host B will have the source port y and Host A will have the destination port x.
+
+R4: A developer may choose to use UDP over TCP for a web application because unlike TCP and its congestion control mechanisms, UDP can communicate without being subject to these mechanisms.
+
+R5: The reason voice and video transmission normally employ TCP rather than UDP is due to the robust and reliable connection that TCP guarantees while two parties are connected.
+
+R7: It could send both messages it received to the same process socket at Host C. Host C could then decide where each message came from by looking at the source port, and portably IP number as well.
+
+R8: I think that all of the requests could be received by Host C over this kind of connection. TCP is a true duplex connection, meaning that data can be sent and received by  the connected parties. I would also image that the socket on Host C would both be using port 80, although I’m not 100% sure that’d work. Might have to try it out myself.
+
+
+P3: 	01010011
+	01100110
+	01110100
+    sum=01100101
+1s comp=10011010
+ The receiver detects errors because if the checksum does not come out all ones then there is a bit missing somewhere. A one bit error should always go undetected. Unlike the two-bit error which, if in the right place (switch a 1 and a zero form the two bytes) then you can spoof the checksum.
+
+P5: No, the receiver cannot be sure that the message they got is 100% the message the sender sent. Like I stated above, if you switch the proper bits in a checksum, you can still get the checksum to work.
+
+P6: This one is pretty obvious, since they are both finite automata. It is also worth noting that both of them have nodes that have self referring loops. And in this case, if the sender in figure 3.11 where to send a message that when received by the receiver in figure 3.57 could make the receiver go into the 1 state and stay there, maybe a checksum spoof that send a blank message that got past the corrupt detectors because the checksum passed. This could cause a deadlock for both parties and nothing would be transmitted.
+

@@ -1,0 +1,53 @@
+Eli Sobylak
+hw 2
+
+Ch1: R19 
+Ch2: R1, R3, R5, R7, R9, R11, R13-R15, P1-P5 
+
+R19: 
+	a. The throughput for this network would be 500 kbps
+	b. Assuming a speed of 500 kilobytes per second, it would take about 8 seconds to transfer 4 million bytes
+	c. The throughput here would be reduced to 100kbps, and to transfer 4 million bytes it would take 40 seconds, or 5 times as slow as a 500kbps network.
+
+R1: 5 applications 
+	Email: uses SMTP
+	Remote terminal access: uses telnet
+	Web: uses HTTP
+	File Transfer: uses FTP
+	Streaming multimedia: uses HTTP
+R3: Like the exercise we did in lab the other day when we set up the web socket server and clients with python and we made a little chat room in class. Those users who set up a script to connect to a port on the network where clients, and our classmate who set up to port as a server was the server in this instance
+
+R5: To do this, a process can identify another host by sending HTTP requests back and forth. Also IP addresses and port numbers help with routing and communication. 
+
+R7: I would imagine that a stock trading application would require no data loss as well as time sensitivity.
+
+R9: SSL is implemented at the application layer.For a developer to implement a SSL to enhance the security of their TCP connection, they will have to set up a SSL web socket which uses similar methods but has its own socket API.
+
+R11: All of there applications use TCP for their transport protocol because TCP provides reliable data transfers. This guarantees that all the data will get their eventually.
+
+R13:Web caching can recur the delay in receiving a request by saving information from previously visited website and reusing data if the information is the same as the last time you visited it.  
+
+R15: FTP is referred to as out-of-band because it uses a separate control connection. In band would be SMTP and HTTP
+
+P1: 
+	a. F
+	b. T
+	c. T
+	d. F
+	e. F
+P2: Command for FTP include USER, PASS, LIST, RETR, and STOR
+
+P3: Besides HTTP, to request a web document you may need FTP and some other protocols as well.
+
+P4: 
+	a. gaia.cs.emass.edu
+	b. It’s running HTTP v1.1
+	c. This would be a persistent connection
+	d. Not sure, either 1.7.2 or 200.408.04
+	e. They are using Firefox, you need to know this for encoding reasons. 
+P5: 
+	a. It was successful in finding the document and 
+	b. It was at 18:27:46 GMT
+	c. it received the message at Sat, 10 DEC2005
+	d. The first 5 bytes are “Spring 2005 homepage”. It has agreed to a persistent connection.
+	  

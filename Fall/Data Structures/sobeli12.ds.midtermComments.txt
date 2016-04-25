@@ -1,0 +1,100 @@
+1. Your code:
+#include “list.h”
+
+//Reverse list by switching direction of pointers.
+iterator reverse(iterator iter) {
+    for each node p in the list{
+        Node *p = iter.current;
+        return {p->prev = tail, p->next = head;}
+    }
+}
+
+
+
+You don't say if this is the member function or non-member function.
+In either case ... this won't work the way I think you think it will.
+First you return from inside the for loop, so you only do this for
+one node. Also your return two things? Neither of which is an iterator,
+which you say that you will return in your type.
+
+ Suppose you did do it for all the nodes, how will you move from
+p to p->next since you are altering the pointers underneath yourself. This
+is one limitation with using iterators, which are following the poitners that
+your are altering. A recursive version of this might be expressed:
+	if (l.isEmpty())
+		return l;
+	else {
+		Object o = l.pop_front();
+		return l.tail().reverse(o);
+	}
+	
+which rebuilds the list ... your solution has a little bit of this feel,
+but it would be expensive in terms of rebuilding the list and allocating
+new space.
+
+2. You have some of the right ideas here. Why do you have cout? cout will never
+be a value returned by a data structure like this. The caller would do any
+input/output. The only exception is if you overload << and >>.
+
+Your class should be:
+
+class Stack {
+	...
+}
+
+and it should have a private area for the representation:
+
+template <class Object>
+class Stack {
+	...
+
+private:
+	Vector<Object> elements;
+}
+
+Then your top function will just use the vector methods on elements:
+
+	Object top() {
+		return elements.front();
+	}
+
+
+etc.
+
+Your paren matcher is a little wonky.
+
+for(index = 0; index < v.size(); i++) {
+    vecNext = v.top();
+    if(vecNext == “(“) {
+        v.push(vecNext);
+    }
+    else if(vecNext == “)”) {
+        v.pop();
+    }
+    else {
+        v.pop();
+        cout << “You have reached the end, if there are odd parens, you missed one in the expression” << end;
+
+
+Why a for loop? Why cout? Why the second else? what are you popping?
+
+
+
+3.
+int queue::mergeQueues(list<int> Q1, list<int> Q2, list<int> R) {
+    list<int>::iterator j = Q1.begin();
+    list<int>::iterator k = Q2.begin();
+    cout << :list Q1 and Q2 combined is: “ << endl;
+    while(j != Q1.end() && k != Q2.end() {
+        R.push_front(*j);
+        R.push_front(*k);
+        j++;
+        k++;
+    }
+    cout << R.pop() << endl;
+}
+
+Why cout?  This is the right idea, although why not return the result?
+
+Also, you should be using the Queue type and the methods enqueue, dequeue,
+etc. Not list.

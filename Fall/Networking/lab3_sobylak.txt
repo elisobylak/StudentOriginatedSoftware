@@ -1,0 +1,82 @@
+Eli Sobylak
+13-oct-15
+Lab3
+
+1. Run nslookup to obtain the IP address of a Web server in Asia. What is the IP
+address of that server?
+	a. It seems that the IP ode for China is 166
+	dns.tsinghua.edu.cn	internet address = 166.111.9.14
+	dns.tsinghua.edu.cn	internet address = 166.111.8.30
+	dns2.tsinghua.edu.cn	internet address = 166.111.8.30
+2. Run nslookup to determine the authoritative DNS servers for a university in
+Europe.
+	a. Authoritative answers can be found from:
+	bas-a.bcc.ac.uk	internet address = 144.82.100.41
+	ns1.cs.ucl.ac.uk	internet address = 128.16.5.32
+	link-1.ts.bcc.ac.uk	internet address = 144.82.100.1
+	ns2.ja.net	internet address = 193.63.105.17
+	ns2.ja.net	has AAAA address 2001:630:0:45::11
+3. Run nslookup so that one of the DNS servers obtained in Question 2 is queried for
+the mail servers for Yahoo! mail. What is its IP address?
+	a. mail.yahoo.com	canonical name = login.yahoo.com.
+	login.yahoo.com	canonical name = fo-ds-ats.member.g02.yahoodns.net.
+	Name:	fo-ds-ats.member.g02.yahoodns.net
+	-> Address: 98.136.189.41
+4. Locate the DNS query and response messages. Are then sent over UDP or TCP?
+	a. They where sent over TCP
+5. What is the destination port for the DNS query message? What is the source port
+of DNS response message?
+	a. The destination port for the DNS query message is 53, and the source port is 65280
+6. To what IP address is the DNS query message sent? Use ipconfig to determine the
+IP address of your local DNS server. Are these two IP addresses the same?
+	a. It is sending the DNS query to the address 10.12.1.10, which must be my DNS address. My IP of my machine is 10.20.77.106. They are not the same.
+7. Examine the DNS query message. What “Type” of DNS query is it? Does the
+query message contain any “answers”?
+	a. The type is A. The only ‘answer’ it contains is this line; 
+	ietf.org: type A, class IN, addr 4.31.198.44
+8. Examine the DNS response message. How many “answers” are provided? What
+do each of these answers contain?
+	a. It says that the Answer RRs is 1
+9. Consider the subsequent TCP SYN packet sent by your host. Does the destination
+IP address of the SYN packet correspond to any of the IP addresses provided in
+the DNS response message?
+	a. No! The IP address for the destination of the TCP SYN packet is 4.31.198.106
+10. This web page contains images. Before retrieving each image, does your host
+issue new DNS queries? 
+	a. No, before each image it does not send out a new DNS query
+11. What is the destination port for the DNS query message? What is the source port
+of DNS response message?
+	a. The destination port for this DNS query is 53, and the source port is 53531.
+12. To what IP address is the DNS query message sent? Is this the IP address of your
+default local DNS server?
+	a. It is sending the query message to my DNS IP, which is 10.12.1.10
+13. Examine the DNS query message. What “Type” of DNS query is it? Does the
+query message contain any “answers”?
+	a. The of the DNS query is type A. and the message contains no answers.
+14. Examine the DNS response message. How many “answers” are provided? What
+do each of these answers contain?
+	a. The number of answer on the response was 3. The three messages are;
+	www.mit.edu: type CNAME, class IN, cname www.mit.edu.edgekey.net
+	www.mit.edu.edgekey.net: type CNAME, class IN, cname e9566.dscb.akamaiedge.net
+	e9566.dscb.akamaiedge.net: type A, class IN, addr 23.74.57.152
+16. To what IP address is the DNS query message sent? Is this the IP address of your
+default local DNS server?
+	a. The IP address for the DNS query was sent to 10.12.1.10
+17. Examine the DNS query message. What “Type” of DNS query is it? Does the
+query message contain any “answers”?
+	a. No, is says answer RRs: 0
+18. Examine the DNS response message. What MIT nameservers does the response
+message provide? Does this response message also provide the IP addresses of the
+MIT namesers?
+	a. The name server that MIT sent back was www.mit.edu.edgekey.net. It does provide the IP, it’s Address: 23.74.57.152.
+20. To what IP address is the DNS query message sent? Is this the IP address of your
+default local DNS server? If not, what does the IP address correspond to?
+	a. **Now I am at home on my local wifi, so my answers will not be consistent with the above work**
+	This time, the DNS query was sent to 75.75.75.75. much different than the local addresses at school. The address of the name server is 18.72.0.3 for bitsy.mit.edu.
+21. Examine the DNS query message. What “Type” of DNS query is it? Does the
+query message contain any “answers”?
+	a. The DNS type is still A. I’m not quite sure when it’d be different.
+22. Examine the DNS response message. How many “answers” are provided? What
+does each of these answers contain?
+	a. This time it only gave me one answer which was;
+	 bitsy.mit.edu: type A, class IN, addr 18.72.0.3

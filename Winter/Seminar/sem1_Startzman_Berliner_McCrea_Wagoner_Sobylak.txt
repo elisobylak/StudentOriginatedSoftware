@@ -1,0 +1,102 @@
+//Zack Startzman
+//Nathaniel Berliner
+//Kalen McCrea
+//Austin Wagoner
+//Eli Sobylak
+
+
+splay(x) {
+    /* rotates node x to the root */
+
+    while (x->parent != null) {
+        if (x == x->parent->left) {
+            if (x->parent == x->parent->parent->left)
+                rotate_right(x->parent->parent);
+                
+            rotate_right(p->parent);
+        } else {
+            if (x->parent == x->parent->parent->right)
+                rotate_left(x->parent->parent);
+                
+            rotate_left(x->parent->parent);
+        }
+    }
+}
+
+Node *access(item, tree) {
+    /* if item is in the tree, returns a pointer to the node
+     * containing that item, otherwise returns null */
+
+    if (tree == null)
+        return null;
+    else if (tree->value == value) {
+        splay(tree);
+        return tree;
+    } else if (tree->value < item)
+        return access(item, tree->left);
+    else
+        return access(item, tree->right);
+}
+
+Node *join(tree1, tree2) {
+    /* Combine trees tl and t2 into a single tree containing all items from
+     * both trees and return the resulting tree. This operation assumes that
+     * all items in tl are less than all those in t2 and destroys both tl and t2 */
+     
+    if (tree1 == NULL) {
+        return tree2;
+    }
+    else if (tree2 == NULL) {
+        return tree1;
+    }
+    else if (tree1 == NULL && tree2 == NULL) {
+        return NULL;
+    }
+    else {
+        findMax(tree1);    /* findMax splays the tree for you */
+        tree2 = tree1 -> right;
+        tree1 = tree2 -> parent;
+    }
+    return tree1;
+}
+
+Node *split(item,tree) {
+    /*Construct and return two trees tl and t2, where t1 contains all items
+    in t less than or equal to i, and t2 contains all items in t greater than
+    i. This operation destroys t. */
+    
+    splay(item);
+    Node *tree2;
+    tree -> right = NULL;
+    tree -> right -> parent = NULL;
+    tree2 = tree -> right;
+    return pair(tree,  tree2);
+    
+}
+
+insert(item,tree) {    //this crap by NB
+    if ( access(item,tree) != item ) {    //access splays the tree
+        pair ts = split(item,tree);        //split into 2 trees
+        if ( item > left(ts) ) {          //which tree should ITEM be added to?
+            return join(left(ts), (item -> right(ts)));       //add ITEM to tree 2, rejoin
+        } else {
+            return join((item -> left(ts)), right(ts));       //add ITEM to tree 1, rejoin
+    }
+}
+
+remove(item,tree) {
+    access(item,tree);
+    tree = join(tree->left, tree->right);
+    return tree;
+}
+
+findMax(tree) {
+    /* not sure if finding the max should splay the tree, since that would result
+     * in a very lopsided tree */
+
+    if (tree->right == null) {
+        splay(tree);    /* if we're splaying it out */
+        return tree->value;
+    } else
+        return findMax(tree->right);    
+}

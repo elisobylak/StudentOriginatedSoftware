@@ -1,0 +1,56 @@
+GADTs and OO Programming
+Gavin Plesko
+Zack Startzman
+Eli Soblyak
+Tai Ho
+Nathaniel Berliner
+Yari Rolfe-Maloney
+
+Analyze the example given in Figures 1 and 2. Why don't we need a cast in the figure 2 version (for instance in the Eval function for Cond.). o
+
+	We don’t need a cast in the figure 2 version because the expressions of figure 2 are typed.
+
+Analyze the example given in Figure 3 (flattening lists). Why do we need a cast?
+  	The root of the problem is that a virtual method must assume that the type of its receiver (this) is a generic instance of its class: it cannot impose nor make use of any pre-conditions on the class instantiation. Luckily, for functions over parameterized ADTs, such casts can always be avoided: we can re-code Flatten as a static method that uses a cast-free implementation of the Visitor pattern to traverse its list, this time at a more specific instantiation.
+
+
+Why do we need double dispatch on the equality example in Figure 4?
+
+	As is usual with a binary method such as Eq, we can implement it by dispatching twice, first on this, to the code that overrides Eq, and then on that, to code specific to the types of both this and that.
+
+How does the addition of constraints solve the problems presented in Figures 3 and 4? Look at Figures 5 and 6 for the use of the constraints and compare to the original.)
+
+	Adding the constraint where T=Pair<C,D> to the signature of TupleEq would allow us to restrict its callers, and so avoid the cast (Figure 5). This approach also works for Flatten, allowing a direct, cast-free implementation (figure 6).
+
+What is the relationship between PADTs and GADTs?
+Parametric vs Generalized
+They generalize the (type) parameterized algebraic datatypes (PADTs) of ML and Haskell by permitting value constructors to return specific, rather than parametric, type instantiations of their own data type.
+
+This paper makes a claim that it has 3 contributions to the field of language design and GADTs in OO programming. What are they? And why might they be important in your programming?
+
+
+The contribution of this paper is threefold: 
+• We present a series of examples in C ] , demonstrating the utility of the GADT pattern for object-oriented programming languages that support generics, such as C ] , Java, C++, and Eiffel. We make the important observation that whilst all GADT definitions can be expressed, there are programs manipulating GADT values that cannot be written in current versions of C ] and Java without the use of run-time casts.
+ • We identify a surprising expressivity gap compared to functional programming with parameterized algebraic datatypes (PADTs): operations with natural definitions in ML and Haskell require unnatural and non-extensible object-oriented encodings to ensure safety. With the introduction of generics, virtual dispatch is no longer as expressive as functional case analysis. 
+• To remedy these expressivity problems, we propose a generalization of C ] ’s type parameter constraint mechanism. We also describe a generalization of switch to provide similar functionality to case for data types found in functional languages. Although a type based switch construct is present in Pizza and Scala[14, 13], our typing rule is more expressive and accommodates GADTs. Both constructs are formalized as extensions to C ] minor, a tiny subset subset of C ] similar in style to FGJ [9]. We also prove a type soundness result.
+
+
+Compare the definition of datatypes in section 2.1 and 2.2 What does the GADT add that was missing in the original? (They use two different data types as examples, but see if you can compare the underlying language features and in what way they are different.)
+
+In the definition of data types under 2.2 is “The restriction that constructors all return ‘generic’ instances of the data type can be removed. This is the defining feature of a GADT”	
+
+Look at the Interpreter design pattern in Section 3. What is the significance of the type checking rules introduced in Section 3.1? Why might a visitor pattern be a better solution?
+
+It constrains a program so it will only run under the correct conditions. 
+
+What is the problem with phantom types and type erasure? Look at the example in Section 4.3 to see how this might be used.
+	
+A phantom type is a type parameter is not used to type data, but is used to force type distinctions.
+
+The rest of the paper includes the formal type rules, which may be too difficult to cover in one session.
+	great question - dope.
+
+
+
+
+

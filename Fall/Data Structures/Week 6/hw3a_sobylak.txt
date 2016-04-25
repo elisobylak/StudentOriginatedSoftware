@@ -1,0 +1,10 @@
+Eli Sobylak
+31-oct-15
+
+3.9
+Using any of these methods on a vector may invalidate a iterator looking at the vector because where I’ve used iterators looking at vectors I had to include a for statement that sets a beginning, end point, and step increase amounts. Normally it looks like this;
+list<int>::iterator iter;
+	for(iter = list.begin(); iter != list.end(); iter++) {
+	/*code*/
+}
+

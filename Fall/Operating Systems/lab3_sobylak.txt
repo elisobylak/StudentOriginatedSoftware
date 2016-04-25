@@ -1,0 +1,100 @@
+Eli Sobylak
+14-oct-15
+
+Lab 3:
+
+Part I: Adding hello function 
+
+I was able to add a hello function that prints ‘hello world!’ when right after os161 boots up. It took a while to get it set up, because I thought I had all of the piece in place but was getting a missing prototype warning. To fix this Noah and I collaborated to and eventually found where the main and menu functions are kept, and added a prototype for the hello function. The header file I put the hello function was test.h which is in kern/include. 
+Eli Sobylak's system version 0 (ASST0 #3)
+
+Hello World!
+308k physical memory available
+Device probe...
+lamebus0 (system main bus)
+emu0 at lamebus0
+ltimer0 at lamebus0
+beep0 at ltimer0
+rtclock0 at ltimer0
+lrandom0 at lamebus0
+random0 at lrandom0
+lhd0 at lamebus0
+lhd1 at lamebus0
+lser0 at lamebus0
+con0 at lser0
+
+cpu0: MIPS r3000
+OS/161 kernel [? for menu]: 
+
+Using GDB:
+
+Run Window:
+sobeli12@holodeck2:root$ sys161 -w kernel
+sys161: System/161 release 2.0.2, compiled Apr 24 2015 11:08:57
+sys161: Waiting for debugger connection...
+sys161: New debugger connection
+
+OS/161 base system version 1.99.05
+Copyright (c) 2000, 2001, 2002, 2003, 2004, 2005, 2008, 2009
+   President and Fellows of Harvard College.  All rights reserved.
+
+Eli Sobylak's system version 0 (ASST0 #3)
+
+Hello World!
+308k physical memory available
+Device probe...
+lamebus0 (system main bus)
+emu0 at lamebus0
+ltimer0 at lamebus0
+beep0 at ltimer0
+rtclock0 at ltimer0
+lrandom0 at lamebus0
+random0 at lrandom0
+lhd0 at lamebus0
+lhd1 at lamebus0
+lser0 at lamebus0
+con0 at lser0
+
+cpu0: MIPS r3000
+OS/161 kernel [? for
+sys161: gdbcomm: read: EOF from debugger
+—————————————————————————————————
+Debug window:
+
+GNU gdb (GDB) 7.8
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "--host=x86_64-unknown-linux-gnu --target=mips-harvard-os161".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from kernel...done.
+(gdb) dir ../os161-1.11/kern/compile/ASST0
+Warning: /home/sobeli12/os161/root/../os161-1.11/kern/compile/ASST0: No such file or directory.
+Source directories searched: /home/sobeli12/os161/root/../os161-1.11/kern/compile/ASST0:$cdir:$cwd
+(gdb) target remote unix:.sockets/gdb
+Remote debugging using unix:.sockets/gdb
+__start () at ../../arch/sys161/startup/start.S:54
+54	../../arch/sys161/startup/start.S: No such file or directory.
+(gdb) break menu
+Breakpoint 1 at 0x800132a8: file ../../startup/menu.c, line 704.
+(gdb) c
+Continuing.
+
+Breakpoint 1, menu (args=0x80031fb0 "") at ../../startup/menu.c:704
+704		menu_execute(args, 1);
+(gdb) where
+#0  menu (args=0x80031fb0 "") at ../../startup/menu.c:704
+#1  0x8001213c in kmain (arguments=0x80031fb0 "") at ../../startup/main.c:215
+#2  0x80029ecc in __start () at ../../arch/sys161/startup/start.S:216
+(gdb) detach
+Detaching from program: /home/sobeli12/os161/root/kernel, Remote target
+Ending remote debugging.
+(gdb) quit

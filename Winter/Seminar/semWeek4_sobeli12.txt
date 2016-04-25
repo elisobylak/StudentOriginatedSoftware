@@ -1,0 +1,16 @@
+Eli Sobylak
+16-feb-2016
+Seminar Winter Week 4
+
+What is a Data Grid?
+-It’s a way to tore and share information simultaneously 
+
+Explain how Global transactions contribute to different data consistency models
+-You need to make sure all of your data is coherent across all your platforms
+What is an "association safe" replication set?
+
+Explain a relational database.
+-a database structured to recognize relations among stored items of information.
+
+How does a replica effect data consistency?
+-Duplicates can be accessed via multiple channels, and this could get you bad search results.

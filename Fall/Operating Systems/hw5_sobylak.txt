@@ -1,0 +1,101 @@
+Eli Sobylak
+28-nov-15
+
+5.1, 5.3, 5.4, 5.5, 5.12, 5.19, 5.21, 5.25
+
+5.1:
+In a multiprocessor setup the speed of execution of a given process is unpredictable. In a multiprogramming setup on a uniprocessor, you’d see a struggle for use of resources across the system.
+
+5.3:
+a.
+P1: {
+shared int x;
+x = 10;
+while (1) {
+	x = x - 1;
+	x = x + 1;
+	if(x != 10) {
+		printf(“x is %d”, x)
+		}
+	}
+}
+
+P2: {
+shared int x;
+x = 10;
+while (1) {
+	x = x - 1;
+	x = x + 1;
+	if(x != 10) {
+		printf(“x is %d”, x)
+		}
+	}
+}
+
+	P1				P2
+1	shared int x			-
+2	x = 10				-
+3	while (1)			-
+4	x = x -	1			-
+5	x = x + 1			-
+6	if(x != 10)			-
+7	printf(“x is %d”,x)		shared int x
+8	-				x = 10				
+9	-				while (1)			
+10	-				x = x -	1			
+11	-				x = x + 1			
+12	-				if(x != 10)			
+13	-				printf(“x is %d”,x)
+
+
+5.4:
+a.
+The lower bound for this program for the value tally would be 50, and the upper bound for the value of tally would be 100.
+
+b.
+I would think that the number of these processes you begin would directly impact the value of tally proportionately to the number of processes. There is no mutual exclusion protection in this program.
+
+5.5:
+Busy waiting happens when a process enters a critical region and there is only one process accessing that code at a time. This means that code can still be running apart from other processes. Busy waiting is not always less efficient than blocking, because the processor use time depends on the process.
+
+5.12:
+There definitely is a difference between the semaphore definitions above the questions and the definitions in figure 5.3. The difference is that in a regular semaphore, you can have the bolt value be negative or positive to any number(depending on the number of things go through the semaphore) where as in these definitions above the question states the value this semaphore can have is 0 and above. This means you could NOT replace any semaphore with this one, because you need to design your semaphore specific to your process management. If you need a binary semaphore, it’ll be different than a regular semaphore, or this semaphore which only uses positive numbers.
+
+5.19:
+	Producer			Consumer	s	n	Delay
+1							1	0	0
+2	semWaitB(s)					0	0	0
+3	n++						0	1	0
+4	if(n==1)
+	(semSignalB(delay))				0	1	1
+5	semSignalB(s)					1	1	1
+6					semWaitB(delay)	1	1	0
+7					semWait(s)	0	1	0
+8					n—		0	0	0
+9					semSignalB(s)	1	0	0
+10	semWaitB(s)					0	0	0
+11	n—-						0	0	0 < turn n,1 to 0
+12	if(n==1)
+	semSignalB(delay)				0	1	1
+13	semSignalB(s)					1	1	1
+14					if(n==0)
+					(semWaitB(delay)1	1	1
+15					semWaitB(s)	0	1	1
+16					n—-		0	0	1
+17					semSignalB(s)	1	0	1
+18					if(n==0)
+					(semWaitB(delay))1	0	0
+19					semWaitB(s)	0	0	0
+20					n—		0	-1	0
+21					semSignalB(s)	1	-1	0
+
+When the producer enters the critical section and the buffer n is equal to zero, then there will be a deadlock and it can never the consumer can no longer consume anything from this program.
+
+5.21:
+a. This would change the program, because the initial values of semaphores s and e are initialized to different values
+b. This would make the values of s and n to have the opposite effects, giving you a different program
+c. Again, s and n are opposite values, so the program would be in opposite 
+d. Semaphore e depends on the size of the fixed buffer so the semSingal(e) would have a different value than the semSignal(s).
+
+5.25:
+It seems that in the readers section of the code, the section where the reading is performed is not set to be critical, and therefore will results in some lack of mutual exclusion and there result could be garbled. 

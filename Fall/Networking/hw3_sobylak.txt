@@ -1,0 +1,67 @@
+Eli Sobylak
+17-oct-15
+
+Ch2: R19, R21, R24, P18-19, P21, P23-24 (compare the two), P29, P31 - P33 (the code is in Chapter 2)
+
+R19: I think the RR would return with a type of XM. This way the company could use an MX record to allow the mail server and web server to have the same aliased name. 
+
+R21: Not necessarily, Bob could even turn his whole machine off and stop all transitions. Even if he does keep the application open, he will only be able to contribute back as fast as his local router can upload.
+
+R24: An advantage of the circular DHT with a mesh overlay connecting all nodes is pure efficiency, things will go much fast in this scenario. A disadvantage is that you need to store more information at each node, making your system clunckier. An advantage of a straight up circular DHT is that it is very scalable and can support many users at the same time.
+
+P18: 
+	a. a whois database is a database for publicly viewing the primary contact or maintainer information. Basically, who buys a domain name is public knowledge, and these websites aggregate it upon request. I’ll be using www.who.is
+	b.
+	c.
+	d.
+	e.
+	f.
+	g.
+
+P19: 
+	a. Here is the dig [a-m].root-servers.net
+	;; QUESTION SECTION:
+	;[a-m].root-servers.net.		IN	A
+
+	;; AUTHORITY SECTION:
+	root-servers.net.	10800	IN	SOA	a.root-		servers.net. nstld.verisign-grs.com. 2015052300 14400 		7200 1209600 3600000
+
+	;; Query time: 69 msec
+	;; SERVER: 75.75.75.75#53(75.75.75.75)
+	;; WHEN: Sat Oct 17 14:24:33 2015	
+	;; MSG SIZE  rcvd: 100
+
+	b. here is the dig for google.com
+	;; QUESTION SECTION:
+	;google.com.			IN	A
+	
+	;; ANSWER SECTION:
+	google.com.		26	IN	A			216.58.216.142
+
+	;; Query time: 35 msec
+	;; SERVER: 75.75.75.75#53(75.75.75.75)
+	;; WHEN: Sat Oct 17 14:26:20 2015
+	;; MSG SIZE  rcvd: 44
+
+P21: Yes, you could easily see if someone on your local DNS network accessed a website outside the network by looking at the IP address of the destination machine. Like the wireshark lab we did.
+
+P23: 
+	a. You could use a client-server type set up to distribute the files at NF/Us.
+	b. This would be the case with the person downloading at the slowest speed and the minimum of the files transfer rate the server will do
+	c. This is easily shown and can be seen in the linear relationship that file sharing schemes have on a client-server network
+
+P24: This problem is similar to the last one but covers a Peer to Peer network
+	a. This would be a peer to upper network. This would achieve F/Us
+	b. This is the case where the system has N users and this formulae is the minimum distribution time for such a network
+	c. With this type of network we can see in practice that the time to share a file of F bytes is logarithmic and depends on the number of users in the peer to peer network
+
+P29: This formula can naturally be used to assign key value pairs in a DHT. In the statements above, we see that we can express any key pair and any peer in a sequence. I can best describe it as that for each key and peer can be expressed as a sum of |Kj - Pj|2^j from j = 0 to n-1.
+
+P31: 
+	a. not much would happen, because there would be no server to connect to yet. It may throw you a warning message depending on how you’re trying to access it. It wouldn’t be able to connect.
+	b. I’m pretty sure it would just hang out and not do anything. you’d be able to join but wouldn’t see anything until the UDP server was set up.
+	c. You may end up connecting to another server if that port happens to be live. Or most likely, it will give you an error that there was nothing to connect to.
+
+P32: 
+
+P33:

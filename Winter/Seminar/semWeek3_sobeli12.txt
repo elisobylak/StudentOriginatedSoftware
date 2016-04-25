@@ -1,0 +1,12 @@
+Eli Sobylak
+16-feb-2016
+Seminar Winter Week 3
+
+What do you know about the heading styles in Microsoft word?
+-They are various formats you can use within your word document to make your document look fancy. They have certain attributes that belong to a certain style.
+
+Should usability include accessibility?
+-Yes, these two things and of go hand in hand. You might as well forget about usability if no one can access it.
+
+Are the legal requirements vague? How so?
+-All legal requirements are vague, that’s why they are written that way, so they can be vague.

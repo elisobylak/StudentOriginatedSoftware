@@ -1,0 +1,63 @@
+Eli Sobylak
+Networking: Lab 1
+
+1. Three different Protocols that I saw while sniffing packets with Wireshark for this lab where HTTP, SSDP, and XML. The last of which was actually listed next to HTTP as ‘HTTP/XML’ which may be the same but I am not familiar with these protocols yet. I’m sure they have subtle differences 
+
+2. It took approximately one tenth of a second. Or from the time .250818 to .331236
+
+3. The internet address for wire shark’s website appears to be 128.119.245.12 and my computer’s address is 10.20.77.107
+
+4.  Files saved to computer. 
+GET
+
+No.     Time               Source                Destination           Protocol Length Info
+   1944 12:48:43.250818000 10.20.77.107          128.119.245.12        HTTP     493    GET /wireshark-labs/INTRO-wireshark-file1.html HTTP/1.1 
+
+Frame 1944: 493 bytes on wire (3944 bits), 493 bytes captured (3944 bits) on interface 0
+Ethernet II, Src: Apple_78:4a:3a (58:b0:35:78:4a:3a), Dst: Procurve_49:af:00 (00:1b:3f:49:af:00)
+Internet Protocol Version 4, Src: 10.20.77.107 (10.20.77.107), Dst: 128.119.245.12 (128.119.245.12)
+Transmission Control Protocol, Src Port: 60256 (60256), Dst Port: 80 (80), Seq: 1, Ack: 1, Len: 427
+Hypertext Transfer Protocol
+    GET /wireshark-labs/INTRO-wireshark-file1.html HTTP/1.1\r\n
+    Host: gaia.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\n
+    Upgrade-Insecure-Requests: 1\r\n
+    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36\r\n
+    Accept-Encoding: gzip, deflate, sdch\r\n
+    Accept-Language: en-US,en;q=0.8\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/INTRO-wireshark-file1.html]
+    [HTTP request 1/2]
+    [Response in frame: 1947]
+    [Next request in frame: 1970]
+
+
+OK
+
+No.     Time               Source                Destination           Protocol Length Info
+   1947 12:48:43.331236000 128.119.245.12        10.20.77.107          HTTP     506    HTTP/1.1 200 OK  (text/html)
+
+Frame 1947: 506 bytes on wire (4048 bits), 506 bytes captured (4048 bits) on interface 0
+Ethernet II, Src: Procurve_49:af:00 (00:1b:3f:49:af:00), Dst: Apple_78:4a:3a (58:b0:35:78:4a:3a)
+Internet Protocol Version 4, Src: 128.119.245.12 (128.119.245.12), Dst: 10.20.77.107 (10.20.77.107)
+Transmission Control Protocol, Src Port: 80 (80), Dst Port: 60256 (60256), Seq: 1, Ack: 428, Len: 440
+Hypertext Transfer Protocol
+    HTTP/1.1 200 OK\r\n
+    Date: Tue, 29 Sep 2015 19:48:43 GMT\r\n
+    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips PHP/5.4.16 mod_perl/2.0.9dev Perl/v5.16.3\r\n
+    Last-Modified: Tue, 29 Sep 2015 05:59:02 GMT\r\n
+    ETag: "51-520dc82bf5f1c"\r\n
+    Accept-Ranges: bytes\r\n
+    Content-Length: 81\r\n
+    Keep-Alive: timeout=5, max=100\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: text/html; charset=UTF-8\r\n
+    \r\n
+    [HTTP response 1/2]
+    [Time since request: 0.080418000 seconds]
+    [Request in frame: 1944]
+    [Next request in frame: 1970]
+    [Next response in frame: 1974]
+Line-based text data: text/html
+

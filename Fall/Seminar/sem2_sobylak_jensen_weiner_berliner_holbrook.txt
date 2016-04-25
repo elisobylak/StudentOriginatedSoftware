@@ -1,0 +1,28 @@
+Eli Sobylak
+Royce Jensen
+Noah Weiner
+Nathaniel Berliner
+Tanner Holbrook
+
+First some matters of comprehension:
+
+1. How does foldr work? In what way can it be used to implement sum? In what way does it contribute to modularization?
+	a. foldr is a substitute for a recursive pattern that represents the recursive calls of a list of some arbitrary types. It can be used to implement sum because sum is a recursive addition of the previous elements in a list of things.
+2. How does the foldr implementation of append work?
+	a. since we know that foldr Cons Nil just copies a list, foldr works by Consing an element to a folder of items.
+3. Apply the definition of fandcons to demonstrate how it works. (p 6)
+	a. 
+4. Why is there a potential conflict between lazy evaluation and programming with side effects?
+5. Compare the two implementations of the Newton-Raphson Square Roots. How does each implementation work? In what way does lazy evaluation help?
+6. (You can look at the differentiation or integration example as well. Describe how it works. How does laziness contribute?
+7. Alpha-beta pruning: if you don't know how this works look up alpha-beta pruning on wikipedia.
+8. Describe how the pruning algorithm is implemented in Haskell.
+Questions about his claims:
+
+1. Outline his argument about the claim that functional languages provide the kinds of glue that make for good modulatization. Do you agree with his claim(s)? Can you think of supporting examples and/or counter-examples?
+	a.
+2. In what way is this higher function a kind of glue? How would you do the same kind of "function" gluing in an imperative language?
+3. How might lazy evaluation contribute to modularization? Concurrency?
+4. How well do the example programs demonstrate modularity? Reusability?
+5. What role does generalization play? How is foldr a generalization?
+6. Why does he believe laziness is so important? How can you use these ideas in a language like C++ (if at all)?

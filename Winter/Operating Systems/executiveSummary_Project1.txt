@@ -1,0 +1,8 @@
+Eli Sobylak
+Executive summary: Project 1
+
+Collaborators: A lot of people in the class
+
+For project one, I was able to successfully complete and demonstrate the whole thing. Specifically, I was able to implement an unsafe counter, a regular lock for mutual exclusion of a shared counter, and a spinlock for the same mutual exclusion.
+
+By doing this project, I learned a lot about mutual exclusion and how to implement it into a program I wrote. Additionally, I learned a good deal about semaphores and kernel programming. 

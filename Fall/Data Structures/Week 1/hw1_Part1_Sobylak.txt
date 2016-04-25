@@ -1,0 +1,108 @@
+Eli Sobylak
+30-sept-15
+
+Ch 1: 1.4, 1.5, 1.7, 1.8, 1.12
+
+1.4  
+pgm1_4.cpp
+/* This program will take a file a read through it to see if there is an #include statement, it will then output the #include into a new file called output. I wasn’t quite sure what the question was asking or and I had to clarify with multiple colleagues. I was not able to get the output file to have the whole file and the related #include statements put in its place. */
+#include <iostream>
+#include <string>
+#include <string.h>
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+using namespace std;
+
+bool chkInclude(string in) {
+	const char *cs = in.c_str();
+	if (strncmp(cs, "#include", 8) == 0) {
+		cout << "It was true" << endl;
+		return true;
+	}
+	else {
+		cout << "it was false" << endl;
+		return false;
+	}
+	
+}
+
+int main(int argc, char** argv) {
+	string s;
+	ssize_t ssz;
+	size_t sz;
+	char *buff = NULL;
+
+	if (argc != 3) {
+		printf("Usage: openRW infile outfile\n");
+		exit(1);
+	}
+	FILE *r_fd = fopen(argv[1], "r");
+	FILE *w_fd = fopen(argv[2], "w");
+	
+	if (r_fd == NULL || w_fd == NULL) {
+		printf("Error on open file(s)\n");
+		exit(1);
+	}
+
+	while ((ssz = getline(&buff, &sz, r_fd)) > 0) {
+		cout << "checking if true" << endl;
+		if(chkInclude(buff) == true){
+		fwrite(buff, ssz, sizeof(char), w_fd);
+		cout << "Look in the " << argv[2] << " file for the results" << endl;
+		}
+	}
+	
+}
+
+1.5	
+numOnes.cpp
+/* This program will take any number N for an input and then output it in its binary representation, when read from bottom to top. In addition, it will also output the number of 1s in N */
+#include <iostream>
+using namespace std;
+
+
+/*int userNum() {
+
+	return n;
+}
+*/
+int oneCounter = 1;
+
+void numOnes(int n) {
+
+
+	if(n == 0) {
+		cout << "0\n";
+	}
+	else if(n == 1) {
+		cout << "1\n";
+		//oneCounter = oneCounter + 1;
+		cout << "Number of ones in the binary representation of N is: " << oneCounter << "\n";
+	}
+	else {
+		cout << n % 2 << "\n";
+		if(n % 2 == 1) {
+			oneCounter = oneCounter + 1;
+		}
+		//oneCounter = oneCounter + 1;
+		numOnes(n/2);
+		//cout << n % 2 << "\n";
+		//numOnes(n%2);
+		//cout << main(n%2);
+	}
+}
+
+int main() {
+	int n;
+	cout << "Enter a number: ";
+	cin >> n;
+	//int n = 5;
+	numOnes(n);
+	return 0;
+}
+
+
+	See hw2_part2_sobylak.txt for problems 1.7,1.8,1.12

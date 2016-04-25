@@ -1,0 +1,18 @@
+Eli Sobylak
+17-oct-15
+
+Ch 3 problems: 3.1, 3.2, 3.4, 3.5, 3.10, 3.11, 3.12
+
+3.1 One event that could cause these transitions. READY->RUN is a process that is being executed. RUN->BLOCKED is a processes queued up to run but is being blocked by a processes currently using processor time. READY->NONRESIDENT I’m not to sure of, the word NONRESIDENT is not used any where else in the textbook. It may have to do with processes calls called by another user of the OS.
+
+3.2 During time 22, P3’s read from disk processes will be in the RUN state. At time 37, no recourses are being used and it should be in the READY state. Finally, at time 47, P5 is being blocked as all the process resource is being used at this time so it’d be BLOCKED, P5 might be BLOCKED on READY.
+
+3.4 
+
+3.5 To maximize on swapping and priority you could have two separate queues designated for either high priority tasks or processes that are ready to run. It would require a little bit more hardware but could be worth the performance costs.
+
+3.10 This flag and store technique used by older machines could be useful because it is quick and probably works well. On the other hand, it’s probably not too efficient in terms of what is possible today. It is also inconvenient because it still takes up space in the registers to store all the register values.
+
+3.11 I think because in UNIX processes are run in kernel mode which may not be interrupted(or preempted) by another processes which is not as useful for real time applications that need multiple resources from various places.
+
+3.12 If this program runs, I’m pretty sure it will output a PID for the fork functions that was run. The type of the PID variable is declared as an Int, so I’d guess it’d just be the PID number created by the fork().

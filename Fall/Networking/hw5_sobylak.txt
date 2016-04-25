@@ -1,0 +1,40 @@
+Eli Sobylak
+10-nov-15
+
+Ch3: R14, R15, R16, P10, P14, P20, P36, P38, P40
+
+R14: 
+a. F
+b. T
+c. T
+d. F
+e. T
+f. T
+g. T
+
+R15: 
+a. 20 bytes
+b. 0
+
+R16: Not sure
+
+P14: If you were to receive 3 duplicate ACKs for a given segment serves as an implicit NAK. This in turn tigers a retransmission of that segment before timeout.
+
+P20: See figure 3.52
+
+P36:
+It may use three duplicates because after only one, it may not be possible to tell whether the receiver or the sender was the one with the error. Basically, three allows a pattern to emerge and as soon as there are three in a row, an error can assumed to have occurred.
+
+P38:
+Yes. the rate must be the same.
+
+P40:
+a. TCP slow start is between 1 and about 5.
+b. Congestion avoidance is taking place between 6 and about 23.
+c. Nope, that is normal
+d. Nope, that is normal
+e. The initial value is 16.
+f. The value at transmission round 18 is 24
+g. Then at 24, it is 1
+h. Not sure
+i. It should have a value of 3

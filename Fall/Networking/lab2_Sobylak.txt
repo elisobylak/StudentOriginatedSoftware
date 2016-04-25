@@ -1,0 +1,63 @@
+Lab 2
+Eli Sobylak
+
+1. Is your browser running HTTP version 1.0 or 1.1? What version of HTTP is the
+server running?
+	My machine is running HTTP v1.1. And the machine at UMass.edu site is also on HTTP 	1.1
+2. What languages (if any) does your browser indicate that it can accept to the
+server?
+	It says accept language for this browser is en-US
+3. What is the IP address of your computer? Of the gaia.cs.umass.edu server?
+	My computer: 10.20.77.108
+	cs.Umass.edu: 128.119.245.12
+4. What is the status code returned from the server to your browser?
+	The status code I got back from the website is 200 OK
+5. When was the HTML file that you are retrieving last modified at the server?
+	It says that is was last-modified: Tues, 06 Oct 2015 05:59:01 GMT\r\n
+6. How many bytes of content are being returned to your browser?
+	It says for this frame, the 200 OK, Frame 70 for me, was 554 bytes in size.
+7. By inspecting the raw data in the packet content window, do you see any headers
+within the data that are not displayed in the packet-listing window? If so, name
+one.
+	I went over each of the sections captured in this frame, Ethernet II, IPv4, TCP, HTP, and text/html and every section 	was included in the raw data in the right hand column 
+8. Inspect the contents of the first HTTP GET request from your browser to the
+server. Do you see an “IF-MODIFIED-SINCE” line in the HTTP GET?
+	I do not see and If-modified-since line in the HTTP GET
+9. Inspect the contents of the server response. Did the server explicitly return the
+contents of the file? How can you tell?
+	When I look at the ‘line-based text data’ I can clearly see the message that was one the sever’s website. I can read 	it:)
+10. Now inspect the contents of the second HTTP GET request from your browser to
+the server. Do you see an “IF-MODIFIED-SINCE:” line in the HTTP GET? If
+so, what information follows the “IF-MODIFIED-SINCE:” header?
+	In the second HTTP GET it DOES have an if-modified since line. and It reads ‘Tue, 06 Oct 2015 05:09:01 GMT\r\n’
+11. What is the HTTP status code and phrase returned from the server in response to
+this second HTTP GET? Did the server explicitly return the contents of the file?
+Explain.
+	After this second GET,the server I was talking to sent back a 304 ‘Not Modified’ message. I don’t thinks explicitly 	sent me the contents of the file again, instead, I think it checked to see if anything had changed and then if it 	needed to be updated. 
+12. How many HTTP GET request messages did your browser send? Which packet
+number in the trace contains the GET message for the Bill or Rights?
+	There are 3 HTTP GET request messages. The first message contains the GET request for the bill of rights in frame 	number 41
+13. Which packet number in the trace contains the status code and phrase associated
+with the response to the HTTP GET request?
+	Packet number 46. the response was 200 OK
+14. What is the status code and phrase in the response?
+	the status code was 200, and the response phrase was OK
+15. How many data-containing TCP segments were needed to carry the single HTTP
+response and the text of the Bill of Rights?
+	There are 4 reassembled TCP segments used to carry this HTTP message
+16. How many HTTP GET request messages did your browser send? To which
+Internet addresses were these GET requests sent?
+	It seems to have sent 4 GET requests to the server.It went to a couple of different places to get everything it needed. It went to 
+	GET /wireshark-labs/HTTP-wireshark-file4.html HTTP/1.1\r\n
+	GET /assets/hip/us/hip_us_pearsonhighered/images/pearson_logo.gif HTTP/1.1\r\n
+	GET /~kurose/cover_5th_ed.jpg HTTP/1.1\r\n
+	GET /~kurose/cover_5th_ed.jpg HTTP/1.1\r\n
+17. Can you tell whether your browser downloaded the two images serially, or
+whether they were downloaded from the two web sites in parallel? Explain.
+	Im pretty sure it did the latter and pulled the images from two sources in parallel and put it on my screen
+18. What is the server’s response (status code and phrase) in response to the initial
+HTTP GET message from your browser?
+	I only get 404 Not Found messages
+19. When your browser’s sends the HTTP GET message for the second time, what
+new field is included in the HTTP GET message?
+	There is no new field since this loving session doesn’t work for me for various reasons.

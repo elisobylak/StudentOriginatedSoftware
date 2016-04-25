@@ -1,0 +1,39 @@
+1.  What do you think of the meta-principles of simple, compact, and not cryptic? Are these objective criteria?  Can you look at code and judge it on this basis? 
+	a. These concepts are good goals
+	they certainly can be objective criteria when analyzed individually
+
+2. Do you understand the relationship of regular expressions and finite automata? Give examples.
+	they are both finite state machines
+	can be represented by states
+
+3. backtracking vs carrying forward: what are the trade-offs?
+	back tracking is slower
+	carrying forward allowed it to move all possible matches forward at each stage
+	
+
+4. generality, flexibility, and speed vs simple, compact and not cryptic.
+Are these incompatible categories? Can one be general and simple? flexible and compact? What is flexibility?
+	Code can be both general and simple. 
+	Thinking of mathematics computations. 
+	Like accumulator function, can do two things with one functions
+	Higher order functions
+	
+
+5. use of recursion: the claim is, it is a good use of recursion. What characterizes that statement?
+	always terminates is a big part
+
+6. what is the role of good notation in making a program easier to use and perhaps easier to write.
+	Well as Sherri said, code is always read more than it is written. So, good 		notation will always help the next person to read your code understand it.
+
+7. Describe what matchstar does and how matchstar works.
+	It tries to match repetitions of the text character c, beginning with zero 		repetitions and counting up, until it either finds a match of the rest of the 		text, or it fails and thus concludes that there is no match.
+
+8. Describe what matchhere does and how matchhere works.
+	The function matchhere operates by attempting to match the first character of the 	regular expression with the first character of the text. If the match fails, there 	can be no match at this text position and matchhere returns 0.
+
+9. Describe what match does and how match works.
+	It tests whether there is an occurrence of the regular expression anywhere within 	the text; it returns 1 if a match is found and 0 if not. If there is more than one 	match, it finds the leftmost and shortest.
+
+10. Do a run through on the regexp: "a*cde$" on the text "aaacdef" and on "aaacde".
+	A grep for the expression ‘a*cde$’ only will capture the text ‘aaacde’ and note 	‘aaacdef’
+	

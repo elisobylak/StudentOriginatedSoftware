@@ -1,0 +1,24 @@
+Eli Sobylak	
+11-Oct-15
+
+Ch 2 problems: 2.1, 2.2, 2.3, 2.4, *2.5
+
+2.1: Turnaround time would equal T*N
+     Throughput time would equal T/N
+     Processor utilization would equal T*N/(I/O)
+	a. 
+	  1- 1 period T
+	  2- 2 period T
+	  4- 4 period T
+	b.
+	  1- IO.Processor.IO.Processor
+	  2- IO.Processor.IO.Processor.IO.Processor.IO.Processor
+	  4- IO.Processor.IO.Processor.IO.Processor.IO.ProcessorIO.Processor.IO.Processor.IO.Processor.IO.Processor	
+
+2.2: It can’t deny processor bound programs to run to the processor because it machine would not know what to run next. This would cause severe problems in computation.
+
+2.3: When using a multiprogramming batch system you can optimize you time with IO and processor usage with batch multiprogramming. It is essentially multitasking in that different resources are being used by different processes simultaneously. In contrast, a time-sharing system would be more worried about allocation of time only, not neccesarily resources.
+
+2.4: System calls allow for a level of abstraction between the user and the hardware. It allows the user to access resources from the machine without managing it manually and rising breaking something. 
+
+2.5: We learned that garbage collection is a function of the language you are using. But the System resource manager(SRM) could be marking frames here that it does not touch very often and it may then move it from memory to the disk for long term storage. 

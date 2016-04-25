@@ -1,0 +1,40 @@
+– what you did
+	I was able to make a very simple scheduler like program tham implements a Queue structure to keep track of jobs entered by the user.
+– an overview of the design and the data structures used
+	My main program basically wraps the user interface in a while loop and prompts the user with the built in commands. I used a queue to keep track of the jobs entered and a lot of the functions are members of the queue structure.
+– include the results of your sample runs here
+	 Welcome to Eli's Scheduler 
+
+	Enter the data to enqueue: 1000
+	Enter the data to enqueue: 1001
+
+	1000
+
+	1001
+	Type 'n' to advance system by one tick 
+
+	Or type 'j' to enter a job into the queue 
+
+	Or type 'p' to print the job list in the queue 
+
+	Or type 'e' to exit the scheduler 
+
+	n
+	Tick Value currently is: 1
+	Type 'n' to advance system by one tick 
+
+	Or type 'j' to enter a job into the queue 
+
+	Or type 'p' to print the job list in the queue 
+
+	Or type 'e' to exit the scheduler 
+
+	n
+	Tick Value currently is: 2
+	Type 'n' to advance system by one tick 
+
+	Or type 'j' to enter a job into the queue 
+
+	Or type 'p' to print the job list in the queue 
+
+	Or type 'e' to exit the scheduler 

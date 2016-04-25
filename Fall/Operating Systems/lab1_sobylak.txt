@@ -1,0 +1,9 @@
+Eli Sobylak
+14-oct-15
+
+Lab 1:
+
+I have successfully built the OS161 system on my holodeck2 account.
+
+I started up the system, and got the main menu to load. It took me a second to realize I was not in my bash terminal and the same commands I was using did not work anymore. I quickly learned to use the ‘?’ to bring up the menu and options
+

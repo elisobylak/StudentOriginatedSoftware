@@ -1,0 +1,31 @@
+Eli Sobylak
+23-oct-15
+
+Ch 4 problems: 4.1, 4.2, 4.3, 4.4, 4.5, 4.7, 4.8, 4.11 
+
+4.1: Yes, it is easier to switch modes between two threads within the same process than it is to mode switch between two threads in two different processes.
+
+4.2: This is because in many OS systems when the ULT makes a system call it will block not only the thread its running, but it also blocks all of the threads within the blocked process.
+
+4.3: 
+	a. The first thing you are losing when you do this is the concurrency model that allows your machine to execute many processes at the same time inter-latched. I think from this reading, OS/2 could only execute the program that is in the foreground of the OS. 
+
+	b. If you where to do this modification, I would think you’d have to associate OS resources such as memory and files directly to hardware. Although I’m not sure exactly what this question is asking.
+
+4.4: Using multithreading allows the OS to interleave processes on the processor and basically does a round-robin approach to picking up and laying down various threads from multiple processes.  
+
+4.5: I would think that the OS would be able to find and terminate all related spawn or child processes or threads when a certain process is killed. They will not continue to run.
+
+4.7: 
+	a. I think this function iterates through a list, maybe of negative numbers, and uses a global int to accumulate a number. Although if you pass it a list of negative numbers it wouldn’t do much of anything.
+	
+	b. Using two parallel threads would not create any problems because they would run independent of each other.
+
+4.8: Well from the code it seems that this threading is saving the state of global_positives variable in register int r. This may create problems because of the fact that is using a register to save this information.
+
+4.11: 
+	a. In a many to one set up a process defines an address space and dynamic resource ownership. Multiple threads may be created and executed within that process. This also allows processes that use similar resources to share threads as light weight processes. 
+
+	b. The reason the ULT is different than a LWP in solaris is that LWP can block and be blocked, whereas ULT as moved between running and runnable states. In addition, LWPs cannot be preempted once they are active.
+
+	c. This figure shows how the solaris OS will switch between ULTs and LWPs and how a ULT can spawn or create a LWP form itself while it is in the active state. Within the active state, there is a running, stopped, blocked, and runnable states with a blocking system call that can make the LWP go from running to blocked.

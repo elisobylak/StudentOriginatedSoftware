@@ -1,0 +1,1 @@
+Yes, you can use negative wieghts with both Prim's and Kruskal's minumum spanning tree algorithms. One trick is to add an arbitrary big interget to all the weights so that they are positive. The resulting MST will be remain the same.

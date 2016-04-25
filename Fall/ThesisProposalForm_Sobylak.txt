@@ -1,0 +1,44 @@
+1. What will you do for your project?
+I was thinking of a way I could leverage what I am doing at work and use the skills I am learning in both this class and my job to see if I can build my own relational database. I’m currently working up in the school’s alumni office helping their project manager go through the process of implementing a CRM (Constituent Relationship Management) system to help the school and its non-profit foundation reach its goals for the schools 50th birthday coming up. 
+
+2. What computer science theory and/or subject matter will it illuminate?
+I will expect to use a lot of data structures in this project which is something I really want to have a good grasp on before I go into the real world job market. I feel as though they are certainly worth knowing if I’m planning to get any real programming done after school. There are other fields as well that I’m sure I’ll find out they tie into this as well.
+
+
+3. What will you learn in accomplishing it?
+I plan to learn a lot about data structures as I mentioned above. In addition,I want to do this project primarily in python programming language for as much of it as I can. I have worked with python before in much smaller contexts, and I believe it’s a powerful enough language to get the job done, and comes with some functional/aethstetic preferences. 
+
+4. What resources will you use?
+I plan to use the python reference manual for starters. When I need to know how to do something it’ll be the first place I go. I may also want to create a front end for the database to make it more user friendly. I’ve used web application hosting sites such as pythonanywhere.com to host simple applications I’ve produced.
+
+5. How much software to you expect to create (in lines of code)?
+Don’t quite know. I will want to database to have minimal operations to begin with of course, select, row, column, delete, where, and so on. This should be anywhere from 300 to 700 (rough estimate). And then if I get through all those successfully I can add more features and put a front end as I see fit. 
+
+6. Implementation plan.
+See next page.
+7. How will you know when you are done (i.e. what criteria should I use in judging the completion of the project)?
+-database can perform simple relational database functions
+-database will have more complex functions such as searching, sorting, and reporting
+-database will have a simple web hosted front end for users to interact with
+
+
+
+Level 0: Minimal prototype 
+	interface: text based console based interactions
+	function: see if I can get the database’s simple functions to operate correctly
+
+Level 1: First working prototype 
+	interface: have all of the simple functions working and the database can work like expected
+	function: make sure there are no bugs in the database, and it operates to capacity
+
+Level 2: 50% complete
+	interface: database will have more complex functions in it, although it may still be purely text based at this time.
+	function: have more complex features you’d want to see in a robust database 
+
+Level 3: Complete
+	interface: database has all the simple functions and complex functions it needs to be a working and robust relational database
+	function: databases are great for storing all sorts of information!
+
+Level 4: Glory!
+	interface: Get a web hosted front end up and running for this database software 
+	function: would be nice for front end users to not have to do everything via command line.

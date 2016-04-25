@@ -1,0 +1,17 @@
+Lab 6
+3-nov-15
+
+1. What is the IP address and TCP port number used by the client computer (source)
+that is transferring the file to gaia.cs.umass.edu? To answer this question, it’s
+probably easiest to select an HTTP message and explore the details of the TCP
+packet used to carry this HTTP message, using the “details of the selected packet
+header window” (refer to Figure 2 in the “Getting Started with Wireshark” Lab if
+you’re uncertain about the Wireshark windows.
+	a. The source IP address is 10.20.77.98, which is my computer.
+2. What is the IP address of gaia.cs.umass.edu? On what port number is it sending
+and receiving TCP segments for this connection?
+	a. The IP address of gaia mass seems to be 128.119.245.12
+4. The TCP SYN sequence number seems to be 0.
+5. The sequence number of the SYN, ACK segment is also sequence 0.
+6. The relative sequence number for the HTTP POST request that my computer sent out is 152977
+8. All the TCP segments have a length of 0.

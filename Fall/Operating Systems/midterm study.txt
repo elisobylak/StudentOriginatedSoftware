@@ -1,0 +1,14 @@
+PROCESS UTILIZATION
+Read one record from file	15µs
+Execute 100 instructions	1µs
+Write one record to file	15µs
+Total=				31µs
+Percent CPU utilization = 1/31= 0.032 = 3.2%
+
+TROUGHPUT
+This is a measure of how much work is being performed. It depends on the average length of a process but is also influenced by scheduling policy.
+
+RESPONSE TIME
+This is the time from the submission of a request until the response begins to be received. It is a measure for the user’s perspective. Turnaround time is the machines perspective.You want low response time to maximize the number of I/O you can do. Uniprogramming has a longer mean response time than multiprogramming. This is because everything has to be done sequentially. 
+
+

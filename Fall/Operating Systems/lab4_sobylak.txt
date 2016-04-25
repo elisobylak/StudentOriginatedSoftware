@@ -1,0 +1,49 @@
+Eli Sobylak
+19-oct-15
+Lab 4
+
+OS161: Command Line:
+
+1. The kh command does a kernel dump, and spits out a graphical representation of the memory being used. This will be helpful for adding kernel threads.
+
+2. Most of them appear to work, only exceptions being the filesystem tests or anything we have not added functionality for.
+
+4. The pf sys161.conf command prints out all of the virtual and real hardware connections it has present. 
+
+5. Using the pwd command prints my current working directory. Inside the /man file I could not use the pf command which was interesting since, I used that command to get the sys161 hardware info earlier. 
+
+7. The ’s’ command tried opening up a shell window and just kept looping and would never actually do anything since I haven’t programed it in yet. It kept repeating the statement Unknown sys call 50.
+
+8. It tried running the program mytestbin/example and it failed to open since there is no file or directory with that name. It actually crashed my machine and I had to restart os161.
+
+10. I used the ‘p’ command to run the program testbin/palin and it runs and checks a pre programmed palindrome. The test came back true for the example palindrome. 
+
+11. I would assume that the sections that talks about static const char *opsmenu[] =
+        "[p]       Other program             ",
+        "[mount]   Mount a filesystem        ",
+        "[unmount] Unmount a filesystem      ",
+        "[bootfs]  Set \"boot\" filesystem     ",
+        "[pf]      Print a file              ",
+        "[cd]      Change directory          ",
+        "[pwd]     Print current directory   ",
+        "[sync]    Sync filesystems          ",
+        "[panic]   Intentional panic         ",
+        "[q]       Quit and shut down        ",
+        NULL
+};
+This seems to be where the menu.c file takes in the arguments on the command line and tell the system which sys call to perform. 
+
+13. I was not able to find where the warp-to-user mode function is kept. I tried using scope and couldn’t find anything related to warping or switching user modes.
+
+OS161: User programs:
+
+1. You’d use the ‘p’ command and then a program name to run the user program.
+
+2. All the user programs that I can see at the moment are located in os161/user/test
+
+3. To run a specific user program you would use the command p testbin/add for example to run the add program.
+
+4. They get garbled output sometimes because the system calls do not work yet.
+
+I was able to add a user program to my OS161. It is a test program you can access in the ?t menu on OS161 that takes a command line argument and echoes it back to the console. I had to add a field for the program in the menu.c page, add a line to my configure file, and make a prototype function in test.h
+

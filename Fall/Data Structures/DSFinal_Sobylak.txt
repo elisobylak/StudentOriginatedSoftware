@@ -1,0 +1,95 @@
+Eli Sobylak
+10-dec-15
+
+
+1.
+	a. 	  5
+		/  \
+	       1   9
+		\  /
+		4  6
+		/   \
+	       3    7
+		     \
+	             8
+
+	b.	  5
+		/  \
+	       1   9
+		\  /
+		4  7
+		/   \
+	       3    8
+		   
+
+		1
+		 \
+		  4
+		 / \
+               3   9
+		     \
+		      7
+		       \
+			8
+
+2.
+
+3.
+
+List* Zip(List A, List B) {
+	list<int> ListA = {1,2,3};
+	list<int> ListB = {10,20,30};
+	int index;
+
+	list<int>::iterator A = A.begin();
+	list<int>::iterator B = B.begin();
+
+	while(A != A.end() || B != B.end()) {
+		for(index = 0, A < A.size(), i = i+2) {
+			cout << *A,*B << endl;
+		}
+	}	
+} 
+
+List* Unzip(List A) {
+	list<int> ListA = {(1,10),(2,20),(3,30)};
+	int index;
+
+	list<int>::iterator A = A.begin();
+
+	while(A != A.end() {
+		for(index = 0, A < A.size(), i = i-2) {
+			cout << A.pop_front, A.pop_front << endl;
+		}
+	}	
+} 
+
+
+4. 
+Takes the current BSTNode called curr
+If the current node cur is empty or NULL
+	return zero
+
+else
+	An int, leftS gets f of curs left node
+	An int, rightS gets f of curs right node
+	return 1 + (If leftS is greater than rightS, add rightS to 1, else add leftS to 1)
+
+This function appears to return zero if a node is empty, or one plus the curs right node if leftS is bigger or one plus the curs left node if rightS is bigger. It tells you information about the height of the member in the tree!
+
+
+5.
+Iterator class const_iterator
+bool operator== (const const_iterator & rhs) const {
+	return it_cur == rhs.itr_cur;
+}
+	          
+
+6.Asserting the function recordHeight is the same function as the one given in problem 3, and that cur does not equal NULL
+int heightDiff(BSTNode *cur) {
+	int leftHt = recordHeight(cur -> left) + 1;
+	int rightHt = recordHeight(cur -> right) + 1;
+	return(rightHt > leftHt ? rightHt - leftHt : leftHt - rightHt);
+	
+}
+		

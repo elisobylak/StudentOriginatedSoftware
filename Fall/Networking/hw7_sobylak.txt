@@ -1,0 +1,27 @@
+Eli Sobylak
+28-nove-15
+
+Ch4: R7, R16, P3, P4, P7, P10
+
+R7:
+Each input port would store a shadow copy of the forwarding table because with this setup forwarding decisions can be made locally without invoking the centralized routing processor on a per-packet basis. This gets rid of centralized processing bottlenecks.
+
+R16:
+This would take up %0.6 of the IP datagram which would let the remainder of the message be application data.
+
+P3:
+A bare bones VC network would have the columns Incoming Interface, Incoming VC#, Outgoing Interface, Outgoing VC#. These numbers represent an interface between a virtual network which uses sequential numbers for tracking and the incoming and outgoing port numbers.
+A datagram has two columns, packet source and packet destination.
+
+P7:
+a.
+They could not go at the same time if they are heading to different output ports.
+
+b.
+If the fabric uses a crossbar then both packets could be worth it.
+
+c.
+Similarly, two packets heading to the same destination could also be sent at the same time through the fabric if it is using a crossbar.
+
+
+

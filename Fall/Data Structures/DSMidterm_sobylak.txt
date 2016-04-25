@@ -1,0 +1,155 @@
+Eli Sobylak
+5-nov-15
+DS Midterm
+
+1. 
+#include “list.h”
+
+//Used to reverse list by switching the direction of the pointers recursively. This is a non-member function as it does not appear within the class for lists
+Object reverse(List<int> l) {
+	if(l.isEmpty()) {
+		return l
+	}
+	else {
+		Object o = l.pop_front();
+		return l.tail().reverse(o);
+	}
+}
+
+/*Big-O*/
+The big-O of what I have above would be O(N). This is because a for loop will influence the time complexity of a program, but assignment statements are kept constant. Space requirement would be kept constant because I have not allocated any additional space like the instructions told us to. All you have to do in the process is just switch the direction of the points in a list.
+
+
+2. 
+template <typename Object>
+class Vector {
+	public:
+	explicit Vector( int initSize = 0) : theSize{initSize},
+	theCapacity{initSize + SPARE_CAPACITY}
+	{objects = new Object[theCapacity];}
+
+	private:
+	int topOfStack = 0;
+	
+	/*BIG 5*/
+
+	/*Copy Constructor*/
+	Vector(const Vector & rhs) : theSize{rhs.theSize} {
+		objects = new Object[theCapacity];
+		for(int k = 0; k < theSize; ++k) {
+			objects[k] = rhs.objects[k];
+		}
+	}
+	
+	/*Copy Assingment*/
+	Vector & operator= (const Vector & rhs) {
+		Vector copy = hrs;
+		std::swap(*this, copy);
+		return *this;
+	}
+	
+	/*Destructor*/
+	~Vector() {
+		delete [] objects;
+	}
+	
+	/*Move Constructor*/
+	Vector(Vector && rhs) : theSize{rhs.theSize},
+	theCapacity{rhs.thecapacity}, objects{rhs.objects} {
+		rhs.objects = nullptr;
+		rhs.theSize = 0;
+		rhs.theCapacity = 0;
+	}
+	
+	/*Move Assignment*/
+	Vector & operator= (Vector && rhs) {
+		std::swap(theSize, rhs.theSize);
+		std:swap(theCapacity, rhs.theCapacity);
+		std:swap(objects, rhs.objects);
+	}
+
+
+	/*METHODS*/
+	
+	bool isEmpty() const {
+		return size() == 0;
+	}
+	int size() const {
+		return theSize;
+	}
+
+	char Vector::pop() {
+		if(topOfStack == 0) {
+			“The stack is empty”
+		}
+		topOfStack—;
+		return topOfStack;
+	}
+
+	void Vector::push(char ch) {
+		if(topOfStack == theCapacity) {
+			“Stack is full”
+		}
+		topOfStack = ch;
+		topOfStack++;
+	}
+
+	void Vector::top() {
+		std::out<< “Top of stack is: “ << topOfStack << endl;
+	}
+
+}
+
+/*Paren Matching program*/
+Using Vector Class;
+
+int index;
+Vector v = 0;
+
+cout<< “Give an expression with parens”;
+cin >> expr;
+
+v = expr;
+
+for(index = 0; index < v.size(); i++) {
+	vecNext = v.top();
+	if(vecNext == “(“) {
+		v.push(vecNext);
+	}	
+	else if(vecNext == “)”) {
+		v.pop();
+	}
+	else {
+		v.pop();
+		cout << “You have reached the end, if there are odd parens, you missed one in the expression” << end;
+	}
+}
+
+/*Big-O*/
+If/else statements tend to be O(N), and since I have wrapped some if/else statements in a for loop I would say that this program has a runtime big-O of O(N^2). This is because for every element it has to check and test in the for loop, it then has to check again in the if/else statements.
+
+3.
+/*member merge function for queues*/
+int queue::mergeQueues(list<int> Q1, list<int> Q2, list<int> R) {
+	list<int>::iterator j = Q1.begin();
+	list<int>::iterator k = Q2.begin();
+	cout << :list Q1 and Q2 combined is: “ << endl;
+	while(j != Q1.end() && k != Q2.end() {
+		R.push_front(*j);
+		R.push_front(*k);
+		j++;
+		k++;
+	}
+	cout << R.pop() << endl;
+}
+
+/*Big-O*/
+The code above would have the big-O runtime of O(N), as the while loop is the only test that is adding to the run complexity. The assignment statements are constant.
+
+
+4.
+There are four basic elements to the circular array that is used to maintain a queue. These are theArray, position of front and back, and finally the size or currentSize. The solution works because when the front or back pointer gets to the end of the array, it simply wraps around to the first index of the other end.One advantage is that like the linked list, circularly linked list are fast, with a O(1) runtime for each operation.
+
+
+
+

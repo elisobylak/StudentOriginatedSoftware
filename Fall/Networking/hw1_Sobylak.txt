@@ -1,0 +1,32 @@
+Eli Sobylak
+19-sept-15
+
+Ch 1: R1, R4, R9, R10, P1, P3
+
+R1: A host is a kind of end system. Host are normally providing data while end systems are typically sending data requests. Example of a host is a national or global ISP or even a laptop. A web server is an end system.
+
+R4: 
+	*DSL(digital subscriber line) —> residential access 
+	*Cable			      —> residential access
+	*FTTH(fiber ti the home)      —> residential access 
+	*LAN(local area network)      —> enterprise access
+	*Terrestrial radio (3G,LTE)   —> wide area wireless access
+	*Satellite radio channels     —> wide area wireless access
+
+R9: 			        Speed		 Dedicated vs. Shared
+	*Dial-up modem	 4 kHz - 1 MHz  		Shared 
+	*DSL		 12Mbps-dw 1.8Mbps-up		Shared
+	*FTTH		 20mbps				Dedicated
+
+R10: Some common wireless Internet access technologies today are Wifi, 3G and LTE. The latter two are telecommunications protocol used primarily for mobile devices. Wifi is a standard wireless technology found in more and more places every day. One difference is the range at which these services work at. For example, you only need to be a few hundred meters away from a cell phone tower while on the other hand you may loose Wifi while walking to your kitchen.
+
+P1: An example of an application level exchange between a customer and an automated banking service.
+	-Start with the customer dipping their card into the ATM which would then send the information on the card over a secure network
+	-User is found in ATM database, ATM prompts user for PIN to allow access in to account.
+	-User enters PIN and sends it over the network.
+	-ATM gets PIN and verifies and then brings up the main menu, where the customer can continue sending transactions back and fourth between the bank and the ATM.
+
+P3:
+	a. For an application that transmits N-bit units of data every k time units I would use a circuit-switched network. I’d use this because in circuit switched networks, like traditional telephones, the connection between two people in done in a ‘circuit’. When a circuit is established it reserves a constant transmission rate for the sender and receiver. This also allows for a guaranteed constant rate.
+
+	b. Due to the design of packet-switched networks and how it allocates link use on demand, you don’t need congestion control. Although there may be a output queue and if the total sum of the data exceeds the output capacity of the link, it will start growing.

@@ -1,0 +1,24 @@
+Eli Sobylak
+19-oct-15
+
+1. What is the goal of these guidelines?
+	a. Just like the MLA guidelines and APA guidelines we use for the english language  and to achieve readability for our audience is crucial. 
+2. Do you think the guidelines achieve what you believe to be the goals?
+	a. Well, if you managed to follow ALL the guidelines ALL of the time you’d have some very readable code that should be pretty accessible for most people reading it. Even then, I’d doubt that everyone everywhere would be able to read your code since a lot of what you type and produce is idiosyncratic no matter how common the guidelines you are using. 
+3. If not, why not? Would you give different guidelines?
+	a. No, there’s no such thing as perfect guidelines, that’s why they are guides, they simply suggest measures you could take to help your colleagues or work partners read and understand what your code says and what it is trying to do.
+4. What do you think of the discussion of typed vs sematnic variables?
+	a. typed variables are built in structures that the language will always understand and semantic variables are typed in the program itself, like in line with the code. I kind of like the idea of semantically typed variables, because I think it’s closer to english which is easy to get a grip with. You have to look words up in the dictionary to find their type, but they are not static, they change over time and update with usage. 
+5. There is a lot of discussion about naming. What is your opinion on naming guidelines and how do they intersect with types?
+	a. The book states your name should be in line with what you are trying to do. I would guess that this concept of naming by function intersects with types because if you use a standard naming convention then you’ll be able to decide what kind of type should be there.
+6. Apply the principles of these guides (or your revised guides) to Java or C++.
+	a. They’d be a good thing to have for Java or C++, and they do! 
+7. Think about the advantages of language style guides and standards for:
+	collaborative work
+		a. Documentation is key when working with other people. Everyone has their own way of programming and unless you get clues, hints, or walkthroughs of how someone did something. By documenting what everything does 
+	future maintenance
+		a. Taking note of what things do will help people in the future when they end up breaking it figure out how to make it work again.
+	efficiency of code
+		a. Keeping excellent care of your code will help you reduce redundancies and thus the efficiency of you code can increase as well. 
+	efficiency of programming
+		a. knowing how to code elegantly can lead to programming less. One example I like is code golf. Although obfuscating your code quite a bit, it makes it quite easy to  program. 

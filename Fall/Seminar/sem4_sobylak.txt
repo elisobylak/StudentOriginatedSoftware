@@ -1,0 +1,26 @@
+Eli Sobylak
+26-oct-15
+
+What do the authors mean by generic functions and the generalization of a C function? Use the examlpe in Figures 1 and 2 to demonstrate. 
+	a. This is cool part of C programming in that you can generalize functions that 	you know can handle various kinds of input.
+Describe type inference, parametric polymorphism, constructor introduction, and the subtype relationship between structures. Give examples of each.
+	a. Parametric polymorphism captures certain  kinds of commonalities between 		various operations of different types.
+How does operator overloading support parametric polymorphism?
+	a. Overloading supports parametric polymorphism by allowing operators that get 		used a lot to be generalized and made to be used for anything you overload it for.
+Why do constructors need to be introduced in order to generalize the power function?
+	a. Constructors need to be in place for generalizations because when objects are 	called in a function, it may need to create new objects on the fly and it needs to 	know a way to do this.
+Why is structural subtyping safe? How does is relate to subclass polymorphism in Java?
+	a. 
+What is the Valid-Code Assumption and how does it affect generalization?
+	a. The valid code assumption allows us to ignore issues about implicit type 		conversions. This effects generalization because any expression whose type is i 	can be given the type that C compiler would have assigned to the expression.
+Why are return types restricted in the generalization?
+	a. If the return type given is polymorphic, this may be a limitation, because we 	cannot generalize the polymorphic type and the return type in the functions 		template is restricted to be the return type given in the original declaration.
+What is over-generalization? Why is it a problem? How do the authors handle it?
+	a. If too many arguments opportunities are provided for generalization, then 		almost every argument of a function will be generalized into a template argument, 	which has the danger of returning garbage output.
+Try to work the type analysis algorithm in 5.2 to the power function in Figure 7.
+	a. 	1) int power(int base, int n)
+		2) 
+What is the difference between i and &alpha.
+What is the problem with casts and why?
+Follow the example of type inference for matchAB and justify why each is type-safe.
+What is your opinion of the value of this work?

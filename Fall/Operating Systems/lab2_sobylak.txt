@@ -1,0 +1,19 @@
+Eli Sobylak
+14-oct-15
+
+Lab 2:
+
+Part I
+I have successfully been able to add my project files to Github. In addition, I’ve been able to put a branch of ASST0 on github so I can go back to different version of working code which is nice. 
+To make a new Git branch, I’ve been using the procedure;
+git checkout -b new_branch_name \\ create and switch to new branch
+git add . \\ add updated folders to github
+git commit -m "message here"
+git push origin new_branch_name
+
+Part II
+I was able to locate and change the banner during the boot process so it says my name and the OS’s version number. 
+
+Part III
+Most of the commands do not work yet in any of the menus. The ones that do work are some test functions like thread tests which just dump a bunch of numbers to the screen, and is probably doing more that I have not discovered yet.
+

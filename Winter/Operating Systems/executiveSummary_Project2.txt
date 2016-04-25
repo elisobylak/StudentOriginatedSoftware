@@ -1,0 +1,10 @@
+Eli Sobylak
+Executive Summary: Project 2
+
+Collaborators: Pretty much everyone again
+
+For this project I was able to complete and demonstrate up to and including mini-project 2.2. This was the part where we had to implement the sys_fork and fork functions so that when you called a fork(), it would do what it needs to do, namely print that the parent has been created.
+
+I was not able to get to the next part of the project which was to implement a proc struct so that children could be spun off in our forks. I hope I can complete it next quarter.
+
+I have learned a great deal about kernel and user space programming which has been interesting, and I’ve learned about creating system forks and deep architecture related concepts about the OS161 system.

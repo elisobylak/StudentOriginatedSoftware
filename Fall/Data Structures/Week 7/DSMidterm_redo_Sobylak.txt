@@ -1,0 +1,163 @@
+Eli Sobylak
+5-nov-15
+DS Midterm
+
+1. 
+#include “list.h”
+
+//Used to reverse list by switching the direction of the pointers recursively. This is a non-member function as it does not appear within the class for lists
+Object reverse(List<int> l) {
+	if(l.isEmpty()) {
+		return l
+	}
+	else {
+		Object o = l.pop_front();
+		return l.tail().reverse(o);
+	}
+}
+
+/*Big-O*/
+The big-O of what I have above would be O(N). All you have to do in the process is just switch the direction of the points in a list.
+
+
+2. 
+template <typename Object>
+class Vector {
+	public:
+	explicit Vector( int initSize = 0) : theSize{initSize},
+	theCapacity{initSize + SPARE_CAPACITY}
+	{objects = new Object[theCapacity];}
+
+	private:
+	Vector<Object> elements;
+	int topOfStack = 0;
+	
+	/*BIG 5*/
+
+	/*Copy Constructor*/
+	Vector(const Vector & rhs) : theSize{rhs.theSize} {
+		objects = new Object[theCapacity];
+		for(int k = 0; k < theSize; ++k) {
+			objects[k] = rhs.objects[k];
+		}
+	}
+	
+	/*Copy Assingment*/
+	Vector & operator= (const Vector & rhs) {
+		Vector copy = hrs;
+		std::swap(*this, copy);
+		return *this;
+	}
+	
+	/*Destructor*/
+	~Vector() {
+		delete [] objects;
+	}
+	
+	/*Move Constructor*/
+	Vector(Vector && rhs) : theSize{rhs.theSize},
+	theCapacity{rhs.thecapacity}, objects{rhs.objects} {
+		rhs.objects = nullptr;
+		rhs.theSize = 0;
+		rhs.theCapacity = 0;
+	}
+	
+	/*Move Assignment*/
+	Vector & operator= (Vector && rhs) {
+		std::swap(theSize, rhs.theSize);
+		std:swap(theCapacity, rhs.theCapacity);
+		std:swap(objects, rhs.objects);
+	}
+
+
+	/*METHODS*/
+	
+	bool isEmpty() const {
+		return size() == 0;
+	}
+	int size() const {
+		return theSize;
+	}
+
+	char Vector::pop() {
+		if(topOfStack == 0) {
+			“The stack is empty”
+		}
+		topOfStack—;
+		return topOfStack;
+	}
+
+	void Vector::push(char ch) {
+		if(topOfStack == theCapacity) {
+			“Stack is full”
+		}
+		topOfStack = ch;
+		topOfStack++;
+	}
+
+	void Vector::top() {
+		std::cout<< “Top of stack is: “ << topOfStack << endl;
+	}
+
+}
+
+/*Paren Matching program*/
+Using Vector Class;
+
+int index;
+Vector v = 0;
+Vector b  = 0;
+
+//Output the instructions for the user to give an expression
+cout<< “Give an expression with parens”;
+//Allow user input to get stored as variable ‘expr’
+cin >> expr;
+
+//Set the expression variable to be the new vector object
+v = expr;
+
+//Have a for loop iterate over the input
+for(index = 0; index < v.size(); i++) {
+	//Set variable vexNext to the top of the vector 
+	vecNext = v.top();
+	//If vecNext is equal to the character of the open parens
+	if(vecNext == “(“) {
+		//Make other vector to gather popped parens
+		b.push(vecNext);
+	}	
+	else if(vecNext == “)”) {
+		v.pop();
+	}
+	else {
+		v.pop();
+		//Use out to output the final result to the console telling the user if there was an error with their expression
+		cout << “You have reached the end, if there are odd parens, you missed one in the expression” << end;
+	}
+}
+
+/*Big-O*/
+If/else statements tend to be O(N), and since I have wrapped some if/else statements in a for loop I would say that this program has a runtime big-O of O(N^2). This is because for every element it has to check and test in the for loop, it then has to check again in the if/else statements.
+
+3.
+/*member merge function for queues*/
+Object queue::mergeQueues(Queue<int> Q1, Queue<int> Q2, Queue<int> R) {
+	list<int>::iterator j = Q1.begin();
+	list<int>::iterator k = Q2.begin();
+	cout << :queue Q1 and Q2 combined is: “ << endl;
+	while(j != Q1.end() && k != Q2.end() {
+		R.enqueue(*j);
+		R.enqueue(*k);
+		j++;
+		k++;
+	}
+	for(int i = 0; i < R.size(); i++) {
+		cout << R.dequeue() << endl;
+	}
+}
+
+/*Big-O*/
+The code above would have the big-O runtime of O(N), as the while loop is the only test that is adding to the run complexity. The assignment statements are constant.
+
+
+
+

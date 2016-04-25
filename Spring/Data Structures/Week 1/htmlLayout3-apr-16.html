@@ -1,0 +1,240 @@
+<head>
+  <title>Thurston Votes Example App</title>
+</head>
+
+
+<template name="homePage">
+	<h1><center>Welcome To<br>Thurston Votes!</center></h1>
+<div class="row">
+	<a href="/electionResults" class="btn-xlarge col-xs-1"><img src="results.png" height="80" width="80">Election Results</a>
+	<a href="/registerToVote" class="btn-xlarge col-xs-1"><img src="MyVote.svg" height="80" width="80">Register to Vote</a>
+	<a href="/currentElectionsMenu" class="btn-xlarge col-xs-1"><img src="current_election.png" height="80" width="80">Current Elections</a>
+</div>
+<br>
+<div class="row">
+	<a href="/mapPage" class="btn-xlarge col-xs-1"><img src="BallotDropBoxSites.png" height="80" width="80"> Map page</a>
+	<a href="/electionDates" class="btn-xlarge col-xs-1"><img src="ElectionDates.png" height="80" width="80">Election Dates</a>
+	<a href="/myDistrictAndOfficials" class="btn-xlarge col-xs-1"><img src="dist_elec_of.png" height="80" width="80">My District and Elected Officials</a>
+</div>
+<br>
+<div class="row">
+	<a href="/precinctDisctrictMaps" class="btn-xlarge col-xs-1"><img src="DistrictMaps.png" height="80" width="80">District and Precinct Maps</a>
+	<a href="/CSPAN" class="btn-xlarge col-xs-1"><img src="cspan.png" height="80" width="80">C-SPAN</a>
+	<a href="/PDC" class="btn-xlarge col-xs-1"><img src="pdc.png" height="80" width="80">PDC Button</a>
+</div>
+</template>
+
+<template name="mapPage">
+		<div class="map-container">
+    		{{> googleMap name="exampleMap" options=exampleMapOptions}}
+ 		</div> 
+
+		<div class="list-group">
+		  <a class="list-group-item" href="#">
+		    <h1>Lacey Area</h1>
+ 		    <ul>
+ 			    {{#each lacey}}
+ 				    {{> Lacey_Area}}
+ 			    {{/each}}
+ 		    </ul></a>
+		  <a class="list-group-item" href="#">
+
+ 		  <h1>Olympia Area</h1>
+		    <ul>
+			    {{#each olympia}}
+				    {{> Olympia_Area}}
+			    {{/each}}
+		    </ul></a>
+		  <a class="list-group-item" href="#">
+ 		  <h1>Tumwater Area</h1>
+		    <ul>
+			    {{#each tumwater}}
+				    {{> Tumwater_Area}}
+			    {{/each}}
+		    </ul></a>
+		  <a class="list-group-item" href="#">
+		  <h1>North County</h1>
+		    <ul>
+			    {{#each northCounty}}
+			   	    {{> North_County}}
+			    {{/each}}
+		    </ul></a>
+		  <a class="list-group-item" href="#">
+		  <h1>South County</h1>
+		    <ul>
+			    {{#each southCounty}}
+			    	    {{> South_County}}
+			    {{/each}}
+		    </ul></a>
+		  <a class="list-group-item" href="#">
+		  <h1>Southeast County</h1>
+		    <ul>
+			    {{#each southeastCounty}}
+			    	    {{> Southeast_County}}
+			    {{/each}}
+		    </ul></a>
+		  <a class="list-group-item" href="#">
+             <h1>Southwest County</h1>
+		    <ul>
+			    {{#each southwestCounty}}
+				    {{> Southwest_County}}
+			    {{/each}}
+		    </ul></a>
+		  <a class="list-group-item" href="#">
+		  <h1>Steamboat Island</h1>
+		    <ul>
+			    {{#each steamboat}}
+				    {{> Steamboat_Island}}
+			    {{/each}}
+		    </ul></a>
+		</div>
+</template>
+
+<template name="Lacey_Area">
+	<li>{{text}}</li>
+</template>
+
+<template name="Olympia_Area">
+ <li>{{text}}</li>
+</template>
+
+<template name="Tumwater_Area">
+	<li>{{text}}</li>
+</template>
+
+<template name="North_County">
+	<li>{{text}}</li>
+</template>
+
+<template name="South_County">
+	<li>{{text}}</li>
+</template>
+
+<template name="Southeast_County">
+	<li>{{text}}</li>
+</template>
+
+<template name="Southwest_County">
+	<li>{{text}}</li>
+</template>
+
+<template name="Steamboat_Island">
+	<li>{{text}}</li>
+</template>
+
+<template name="currentElectionsMenu">
+<div class ="container">
+<div class="row center-me">
+	<a href="/accessibleVoting" class="btn-xlarge col-xs-1"><img src="results.png" heihgt="80" width="80">Accessible Voting</a>
+	<a href="/ballotReturns" class="btn-xlarge col-xs-1"><img src="MyVote.png" height="80" width="80">Ballot Returns by District</a>
+	<a href="/militaryAndOverseas" class="btn-xlarge col-xs-1"><img src="current_election.png" height="80" width="80">Military and Overseas Voters</a>
+</div>
+<br>
+<div class="row center-me">
+	<a href="/needABallot" class="btn-xlarge col-xs-1"><img src="BallotDropBoxSites.png" height="80" width="80"> Need a Ballot?</a>
+	<a href="/registrationDeadlines" class="btn-xlarge col-xs-1"><img src="ElectionDates.png" height="80" width="80">Registration Deadlines</a>
+	<a href="/sampleBallot" class="btn-xlarge col-xs-1"><img src="dist_elec_of.png" height="80" width="80">Sample Ballot</a>
+</div>
+<br>
+<div class="row center-me">
+	<a href="/statistics" class="btn-xlarge col-xs-1"><img src="DistrictMaps.png" height="80" width="80">Statistics</a>
+	<a href="/voterPamphlet" class="btn-xlarge col-xs-1"><img src="cspan.png" height="80" width="80">Voter's Pamphlet</a>
+	<a href="/ballotReceived" class="btn-xlarge col-xs-1"><img src="pdc.png" height="80" width="80">Was My Ballot Received?</a>
+</div>
+</div>
+</template>
+
+<template name="accessibleVoting">
+	<iframe class="myIframe" src="http://www.co.thurston.wa.us/auditor/Elections/VAAC/accessible_current_election.htm"></iframe>
+</template> 
+
+<template name="ballotReturns">
+	<iframe class="myIframe" src="http://www.co.thurston.wa.us/auditor/Elections/2016elections/February/returns_district.pdf"></iframe>
+</template> 
+
+<template name="militaryAndOverseas">
+	<iframe class="myIframe" src="https://thurstoncounty.everyonecounts.com/page/557/1075"></iframe>
+</template> 
+
+<template name="needABallot">
+	<iframe class="myIframe" src="	
+http://www.co.thurston.wa.us/auditor/Elections/voter_reg/ballot.htm"></iframe>
+</template> 
+
+<template name="registrationDeadlines">
+	<iframe class="myIframe" src="http://www.co.thurston.wa.us/auditor/Elections/election_dates.htm"></iframe>
+</template> 
+
+<template name="sampleBallot">
+	<iframe class="myIframe" src="http://www.co.thurston.wa.us/auditor/Elections/2016elections/February/Sample_Ballot.pdf"></iframe>
+</template> 
+
+<template name="statistics">
+	<iframe class="myIframe" src="	
+http://www.co.thurston.wa.us/auditor/Elections/2016elections/February/stats.pdf"></iframe>
+</template> 
+
+<template name="voterPamphlet">
+	<iframe class="myIframe" src="http://www.co.thurston.wa.us/auditor/elections/2016elections/february/vp/vp_main.htm"></iframe>
+</template> 
+
+<template name="ballotReceived">
+	<iframe class="myIframe" src="https://www.sos.wa.gov/elections/myvote/"></iframe>
+</template> 
+
+
+<template name="electionResults">
+	<iframe class="myIframe" src="http://www.co.thurston.wa.us/auditor/Elections/history/archive.htm"></iframe>
+</template>  
+
+<template name="CSPAN">
+	<iframe class="myIframe" src="http://www.c-span.org/series/?campaign2016&nav=candidates"></iframe>
+</template> 
+
+<template name="myDistrictAndOfficials">
+	<iframe class="myIframe" src="http://www.co.thurston.wa.us/electiondatalookup/default.aspx"></iframe>
+</template>
+
+<template name="PDC">
+	<iframe class="myIframe" src="http://pdc.wa.gov/"></iframe>
+</template>
+
+<template name="precinctDisctrictMaps">
+	<iframe class="myIframe" src="http://www.co.thurston.wa.us/auditor/Elections/precinct_maps/maps.htm"></iframe>
+</template>
+
+<template name="registerToVote">
+	<iframe class="myIframe" src="https://wei.sos.wa.gov/agency/osos/en/voters/Pages/register_to_vote.aspx"></iframe>
+</template>
+
+<template name="electionDates">
+	<iframe class="myIframe" src="http://www.co.thurston.wa.us/auditor/Elections/election_dates.htm"></iframe>
+</template>
+
+
+<template name="mainNav">
+     <nav class="navbar navbar-inverse " role="navigation">
+            <div class="navbar-header">
+                <button type="navbar-toggle" class="btn btn-success" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <i class="fa fa-bars fa-3x"></i>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/">Home Page</a>
+                        <a href="/second">Map Page</a>
+                        <a href="http://www.co.thurston.wa.us/auditor/Forms/Hours&Contact.htm">Contact Us</a>
+                    <div class="row center-me">
+                        <a href="https://www.facebook.com/Thurston-County-Auditors-Office-328306377190679/"><i class="fa fa-facebook-official fa-2x"></i></a>
+                        <a href="https://twitter.com/TCAuditor"><i class="fa fa-twitter-square fa-2x"></i></a>
+                        <a href="https://www.instagram.com/thurstonauditor/"><i class="fa fa-instagram fa-2x"></i></a>
+                        <a href="https://www.youtube.com/channel/UCxORZbqlmF1kADpJAu9EIOg"><i class="fa fa-youtube-square fa-2x"></i></a>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+       {{> yield }}
+</template>
+
